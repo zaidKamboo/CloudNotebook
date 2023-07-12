@@ -5,12 +5,11 @@ import AlertContext from "../Context/AlertContext";
 import NoteItem from "./NoteItem";
 import AddNote from "./AddNote";
 import { useNavigate } from "react-router-dom";
-import Login from "./Login";
 const Notes = () => {
-  let navigate = useNavigate();
   const nc = useContext(NoteContext);
   const { notes, getNotes, editNote } = nc;
 
+  const navigate = useNavigate();
   const ac = useContext(AlertContext);
   const { showAlert } = ac;
 
@@ -26,8 +25,14 @@ const Notes = () => {
   };
 
   useEffect(() => {
-    getNotes();
-
+    navigate("/login");
+    const tk = localStorage.getItem("token");
+    if (tk) {
+      navigate("/login");
+      navigate("/");
+      getNotes();
+      console.log(tk);
+    }
     // eslint-disable-next-line
   }, []);
 
@@ -53,7 +58,6 @@ const Notes = () => {
     showAlert("Updated note successfully.", "success");
   };
   let token = localStorage.getItem("token");
-
   return (
     <div className="row my-3">
       <AddNote />

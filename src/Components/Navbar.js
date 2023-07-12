@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 export const Navbar = () => {
   let location = useLocation();
@@ -47,7 +47,11 @@ export const Navbar = () => {
               <Link className="btn btn-primary mx-2" to="/login" role="button">
                 Login
               </Link>
-              <Link className="btn btn-primary mx-2" to="/signup  " role="button">
+              <Link
+                className="btn btn-primary mx-2"
+                to="/signup  "
+                role="button"
+              >
                 SignUp
               </Link>
             </form>
