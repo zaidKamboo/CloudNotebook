@@ -31,7 +31,6 @@ const Notes = () => {
       navigate("/login");
       navigate("/");
       getNotes();
-      console.log(tk);
     }
     // eslint-disable-next-line
   }, []);
@@ -57,7 +56,6 @@ const Notes = () => {
     setNote(note);
     showAlert("Updated note successfully.", "success");
   };
-  let token = localStorage.getItem("token");
   return (
     <div className="row my-3">
       <AddNote />

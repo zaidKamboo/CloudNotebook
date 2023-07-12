@@ -27,8 +27,8 @@ const SignUp = () => {
     console.log(json);
     if (json.success) {
       //Save the auth token and Redirect
-      localStorage.setItem("token", json.authtoken);
-      showAlert("Account created succsessfully.", "success");
+      localStorage.setItem("token", json.authToken);
+      console.log(localStorage.getItem("token"));
       history("/");
     }
   };
