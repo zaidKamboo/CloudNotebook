@@ -4,6 +4,7 @@ import { useContext } from "react";
 import AlertContext from "../Context/AlertContext";
 
 const SignUp = () => {
+  const host = "localhost:5000";
   const alertContext = useContext(AlertContext);
   const { showAlert } = alertContext;
   const [credentials, setCredentials] = useState({
@@ -12,24 +13,26 @@ const SignUp = () => {
     password: "",
     cpassword: "",
   });
-  let history = useNavigate();
+  let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     let { name, email, password } = credentials;
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch(`http://${host}/api/auth/createuser`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": " application/json",
       },
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name: name, email: email, password: password }),
     });
     const json = await response.json();
     console.log(json);
     if (json.success) {
       //Save the auth token and Redirect
+      showAlert("User Registered Successfully.", "success");
       localStorage.setItem("token", json.authToken);
-      console.log(localStorage.getItem("token"));
-      history("/");
+      navigate("/");
+    } else {
+      showAlert("Something went wrong", "danger");
     }
   };
   const onChange = (event) => {

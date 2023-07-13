@@ -21,10 +21,9 @@ const Login = () => {
       }),
     });
     const json = await response.json();
-    console.log(json);
     if (json.success) {
       //Save the auth token and Redirect
-      localStorage.setItem("token", json.authtoken);
+      localStorage.setItem("token", json.authToken);
       history("/");
       showAlert("Logged in Successfully.", "success");
     } else {
