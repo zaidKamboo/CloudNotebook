@@ -19,18 +19,20 @@ const AddNote = () => {
   };
   return (
     <>
-      <h3 className="my-3">Add a note</h3>
-      <form className="my-3">
+      <form className="my-3 new2">
+        <h3 className="my-3 addnote">
+          <b>Add a note...</b>
+        </h3>
         <div className="mb-3">
-          <label htmlFor="title" className="form-label">
-            Title
+          <label htmlFor="title" className="form-label ac">
+            <b>Title</b>
           </label>
           <input
             type="text"
             required
             value={note.title}
             minLength={4}
-            className="form-control"
+            className="form-control input"
             id="title"
             name="title"
             aria-describedby="emailHelp"
@@ -38,28 +40,28 @@ const AddNote = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="description" className="form-label">
-            Description
+          <label htmlFor="description" className="form-label ac">
+            <b>Description</b>
           </label>
           <input
             type="text"
             required
             value={note.description}
             minLength={4}
-            className="form-control"
+            className="form-control input"
             id="description"
             name="description"
             onChange={onChange}
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="tag" className="form-label">
-            Tag
+          <label htmlFor="tag" className="form-label ac">
+            <b>Tag</b>
           </label>
           <input
             value={note.tag}
             type="text"
-            className="form-control"
+            className="form-control input"
             id="tag"
             name="tag"
             onChange={onChange}

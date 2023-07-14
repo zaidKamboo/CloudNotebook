@@ -2,12 +2,17 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 export const Navbar = () => {
   let location = useLocation();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
+  console.log(handleLogout);
+  let token = localStorage.getItem("token");
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar">
         <div className="container-fluid">
-          <Link className="navbar-brand" href="/">
-            iNoteBook
+          <Link className="navbar-brand nav-link" to="/">
+            CloudNoteBook
           </Link>
           <button
             className="navbar-toggler"
@@ -27,7 +32,7 @@ export const Navbar = () => {
                   className={`nav-link ${
                     location.pathname === "/" ? "active" : ""
                   }`}
-                  to="/"
+                  to={token ? "/" : "/login"}
                 >
                   Home
                 </Link>
@@ -49,6 +54,14 @@ export const Navbar = () => {
               </Link>
               <Link
                 className="btn btn-primary mx-2"
+                to="/login"
+                onClick="handleLogout()"
+                role="button"
+              >
+                Logout
+              </Link>
+              <Link
+                className="btn btn-primary mx-2"
                 to="/signup  "
                 role="button"
               >
@@ -61,3 +74,15 @@ export const Navbar = () => {
     </>
   );
 };
+/*
+.new {
+  margin-top: 10%;
+  margin-left: 23%;
+  width: 56%;
+  text-align: center;
+  background-color: aqua;
+  border: 2px solid white;
+  border-radius: 10px;
+  border-collapse: collapse;
+}
+ */

@@ -34,39 +34,59 @@ const Login = () => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3 mx-3">
-          <label htmlFor="email" className="form-label">
-            Email address
+    <div className="container ">
+      <form
+        onSubmit={handleSubmit}
+        className="new"
+        //style={{ color: "red", backgroundColor: "black" }}
+      >
+        <div className="mb-3 my-3 ">
+          <label htmlFor="email" className="form-label ac">
+            <b>Email address : </b>
           </label>
           <input
+            //  style={{ color: "red", backgroundColor: "black" }}
             onChange={onChange}
             type="email"
             name="email"
             id="email"
-            className="form-control"
+            className="form-control input"
             aria-describedby="emailHelp"
             value={credentials.email}
+            placeholder="Enter your Email address here  "
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="password" className="form-label">
-            Password
+          <label htmlFor="password" className="form-label ac">
+            <b>Password : </b>
           </label>
           <input
             onChange={onChange}
             type="password"
-            className="form-control"
+            className="form-control input"
             id="password"
             name="password"
             value={credentials.password}
+            placeholder="Enter your Password here "
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="submit"
+          style={{ width: "25%" }}
+          className="btn btn-primary submit my-3"
+        >
           Submit
         </button>
       </form>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 };

@@ -8,26 +8,26 @@ const NoteItem = (props) => {
   const ac = useContext(AlertContext);
   const { showAlert } = ac;
   return (
-    <div className="col-md-3">
-      <div className="card my-2 mx-2">
+    <div className="col-md-3 noteitem">
+      <div className="card my-2 mx-2 body">
         <div className="card-body">
-          <div className="d-flex align-items-center">
-            <h5 className="card-title">{note.title}</h5>
+          <div className="d-flex align-items-center ">
+            <h4 className="card-title noteItemTitle">{note.title}</h4>
             <i
-              className="far fa-trash-alt mx-2"
+              className="far fa-trash-alt mx-2 noteItemIcon"
               onClick={() => {
                 deleteNote(note._id);
                 showAlert("Deleted note successfully.", "success");
               }}
             ></i>
             <i
-              className="far fa-edit mx-2"
+              className="far fa-edit mx-2  noteItemIcon"
               onClick={() => {
                 updatenote(note);
               }}
             ></i>
           </div>
-          <p className="card-text">{note.description}</p>
+          <p className="card-text noteItemDescription">{note.description}</p>
         </div>
       </div>
     </div>

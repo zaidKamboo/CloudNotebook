@@ -7,7 +7,7 @@ const { body, validationResult } = require("express-validator");
 //Route 1 : Get all the notes using : GET "/api/note/fetchallnotes".Login required
 router.get("/fetchallnotes", fetchUser, async (req, res) => {
   try {
-    const notes = await Notes.find({ user: req.user });
+    const notes = await Notes.find({ user: req.user.id });
     res.json(notes);
   } catch (error) {
     console.error(error.message);
@@ -34,7 +34,7 @@ router.post(
         return res.status(400).json({ errors: errors.array() });
       }
       const note = new Notes({
-        user: req.user,
+        user: req.user.id,
         title,
         description,
         tag,
@@ -70,7 +70,7 @@ router.put("/updatenote/:id", fetchUser, async (req, res) => {
       return res.status(404).send("Not found");
     }
     //Not allowing the unauthenticated user to delete any note || Not allowing one user to delete other user's notes
-    if (note.user.toString() !== req.user) {
+    if (note.user.toString() !== req.user.id) {
       return res.status(401).send("Not allowed");
     }
     note = await Notes.findByIdAndUpdate(

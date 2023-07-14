@@ -57,7 +57,8 @@ const Notes = () => {
     showAlert("Updated note successfully.", "success");
   };
   return (
-    <div className="row my-3">
+    <div className="row my-3 ">
+      <h1 className="header">Welcome to CloudNoteBook</h1>
       <AddNote />
       <button
         type="button"
@@ -156,6 +157,9 @@ const Notes = () => {
         </div>
       </div>
       <div className="row my-3">
+        <div className="header">
+          <h2>Your Notes : </h2>
+        </div>
         <div className="container">
           {notes.length === 0 && "No notes here."}
         </div>
@@ -165,6 +169,15 @@ const Notes = () => {
           );
         })}
       </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 };
