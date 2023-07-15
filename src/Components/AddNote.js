@@ -32,6 +32,7 @@ const AddNote = () => {
             required
             value={note.title}
             minLength={4}
+            maxLength={9}
             className="form-control input"
             id="title"
             name="title"

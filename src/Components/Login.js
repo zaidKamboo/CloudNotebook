@@ -37,11 +37,11 @@ const Login = () => {
     <div className="container ">
       <form
         onSubmit={handleSubmit}
-        className="new"
+        className="form"
         //style={{ color: "red", backgroundColor: "black" }}
       >
         <div className="mb-3 my-3 ">
-          <label htmlFor="email" className="form-label ac">
+          <label htmlFor="email" className="form-label label">
             <b>Email address : </b>
           </label>
           <input
@@ -57,7 +57,7 @@ const Login = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="password" className="form-label ac">
+          <label htmlFor="password" className="form-label label">
             <b>Password : </b>
           </label>
           <input
@@ -73,7 +73,7 @@ const Login = () => {
         <button
           type="submit"
           style={{ width: "25%" }}
-          className="btn btn-primary submit my-3"
+          className="btn btn-primary  my-3"
         >
           Submit
         </button>

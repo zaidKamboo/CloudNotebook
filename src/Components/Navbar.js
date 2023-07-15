@@ -1,12 +1,16 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 export const Navbar = () => {
   let location = useLocation();
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-  };
-  console.log(handleLogout);
+  const navigate = useNavigate();
   let token = localStorage.getItem("token");
+  /* const handleLogout = () => {
+    localStorage.removeItem("token");
+    if (localStorage.removeItem("token")) {
+      console.log("success");
+      navigate("/login");
+    }
+  };*/
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar">
@@ -55,7 +59,10 @@ export const Navbar = () => {
               <Link
                 className="btn btn-primary mx-2"
                 to="/login"
-                onClick="handleLogout()"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  navigate("/login");
+                }}
                 role="button"
               >
                 Logout

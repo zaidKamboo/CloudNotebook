@@ -74,23 +74,32 @@ const Notes = () => {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Edit Note
-              </h5>
+        <div className="modal-dialog ">
+          <div className="modal-content modal" style={{ width: "100%" }}>
+            <div className="modal-header modalHeader">
+              <h3
+                className="modal-title addnote"
+                id="exampleModalLabel"
+                style={{
+                  borderRadius: "2px",
+                  width: "90%",
+                  borderRadius: "22px",
+                }}
+              >
+                <b>Edit Note</b>
+              </h3>
               <button
                 type="button"
+                style={{ backgroundColor: "red" }}
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">
-              <form className="my-3">
+            <div className="modal-body modalBody">
+              <form className="my-3 modalform">
                 <div className="mb-3">
-                  <label htmlFor="etitle" className="form-label">
+                  <label htmlFor="etitle" className="form-label label">
                     Title
                   </label>
                   <input
@@ -98,7 +107,7 @@ const Notes = () => {
                     minLength={4}
                     value={note.etitle}
                     type="text"
-                    className="form-control"
+                    className="form-control input"
                     id="etitle"
                     name="etitle"
                     aria-describedby="emailHelp"
@@ -106,7 +115,7 @@ const Notes = () => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="edescription" className="form-label">
+                  <label htmlFor="edescription" className="form-label label">
                     Description
                   </label>
                   <input
@@ -114,20 +123,20 @@ const Notes = () => {
                     minLength={4}
                     value={note.edescription}
                     type="text"
-                    className="form-control"
+                    className="form-control input"
                     id="edescription"
                     name="edescription"
                     onChange={onChange}
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="etag" className="form-label">
+                  <label htmlFor="etag" className="form-label label">
                     Tag
                   </label>
                   <input
                     value={note.etag}
                     type="text"
-                    className="form-control"
+                    className="form-control input"
                     id="etag"
                     name="etag"
                     onChange={onChange}
@@ -135,7 +144,7 @@ const Notes = () => {
                 </div>
               </form>
             </div>
-            <div className="modal-footer">
+            <div className="modal-footer modalFooter">
               <button
                 type="button"
                 className="btn btn-secondary"

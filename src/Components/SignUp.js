@@ -39,10 +39,10 @@ const SignUp = () => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
+    <div className="container signup">
+      <form onSubmit={handleSubmit} className="form">
         <div className="mb-3 my-3">
-          <label htmlFor="email" className="form-label">
+          <label htmlFor="email" className="form-label label">
             Name :
           </label>
           <input
@@ -51,12 +51,12 @@ const SignUp = () => {
             type="text"
             name="name"
             id="name"
-            className="form-control"
+            className="form-control input"
             aria-describedby="emailHelp"
           />
         </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
+        <div className="mb-3 ">
+          <label htmlFor="email" className="form-label label">
             Email address :
           </label>
           <input
@@ -65,12 +65,12 @@ const SignUp = () => {
             type="email"
             name="email"
             id="email"
-            className="form-control"
+            className="form-control input"
             aria-describedby="emailHelp"
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="password" className="form-label">
+          <label htmlFor="password" className="form-label label">
             Password
           </label>
           <input
@@ -79,13 +79,13 @@ const SignUp = () => {
             minLength={5}
             placeholder="Enter your password here"
             type="password"
-            className="form-control"
+            className="form-control input"
             id="password"
             name="password"
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="cpassword" className="form-label">
+          <label htmlFor="cpassword" className="form-label label">
             Confirm Password
           </label>
           <input
@@ -94,15 +94,23 @@ const SignUp = () => {
             minLength={5}
             placeholder="Confirm the entered password"
             type="password"
-            className="form-control"
+            className="form-control input"
             id="cpassword"
             name="cpassword"
           />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className=" btn btn-primary ">
           Submit
         </button>
       </form>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 };
