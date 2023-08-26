@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+First mongodb should be connected and then run first "npm install" to install all the dependent packages and then run ?"npm run both" to start frontend as well as backend of the project. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
