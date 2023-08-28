@@ -1,6 +1,11 @@
+# Installing and Running this project at your local device.
+First run "git clone  https://github.com/zaidKamboo/ClodNotebook.git" in your git bash in the folder you want to create this project.
+Then run "cd /NewsApp" and then run "code." else open the CloudNotebook folder in VS Code.
+Make sure you have "node js" and "npm" installed in your machine.
+Then run "npm install" on the terminal of VS Code.This will install all the dependencies of this project in your local Machine.
+Then simply run "npm run start" to start the Application in your browser.
+Also see that your mongoDb port should match with the port mentioned in "Backend/index.js" => mongoURI variable. 
 # Getting Started with Create React App
-First mongodb should be connected and then run first "npm install" to install all the dependent packages and then run "npm run both" to start frontend as well as backend of the project. 
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
