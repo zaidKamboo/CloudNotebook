@@ -47,6 +47,7 @@ const NoteState = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
+    // eslint-disable-next-line
     const json = await response.json();
     const newNotes = notes.filter((note) => {
       return note._id !== id;

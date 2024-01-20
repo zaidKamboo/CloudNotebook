@@ -58,7 +58,9 @@ const Notes = () => {
   };
   return (
     <div className="row my-3 ">
-      <h1 className="header">Welcome to CloudNoteBook</h1>
+      <h1 className="header">
+        <marquee>Welcome to CloudNoteBook</marquee>
+      </h1>
       <AddNote />
       <button
         type="button"
@@ -83,7 +85,6 @@ const Notes = () => {
                 style={{
                   borderRadius: "2px",
                   width: "90%",
-                  borderRadius: "22px",
                 }}
               >
                 <b>Edit Note</b>

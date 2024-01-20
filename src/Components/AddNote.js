@@ -24,7 +24,7 @@ const AddNote = () => {
           <b>Add a note...</b>
         </h3>
         <div className="mb-3">
-          <label htmlFor="title" className="form-label ac">
+          <label htmlFor="title" className="form-label addNoteLabel">
             <b>Title</b>
           </label>
           <input
@@ -41,7 +41,7 @@ const AddNote = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="description" className="form-label ac">
+          <label htmlFor="description" className="form-label addNoteLabel">
             <b>Description</b>
           </label>
           <input
@@ -56,7 +56,7 @@ const AddNote = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="tag" className="form-label ac">
+          <label htmlFor="tag" className="form-label addNoteLabel">
             <b>Tag</b>
           </label>
           <input

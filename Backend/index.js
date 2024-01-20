@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const mongoURI = "mongodb://127.0.0.1:27017/test";
 
 const app = express();
 app.use(express.json());
@@ -11,7 +10,9 @@ const port = 5000;
 
 //Connecting to the DB
 mongoose
-  .connect(mongoURI)
+  .connect(
+    "mongodb+srv://zaidkamboo100:uCB1d78YVdAWwWbd@cluster0.cmhpxy1.mongodb.net/"
+  )
   .then(() => {
     console.log("Mongo db connected");
   })

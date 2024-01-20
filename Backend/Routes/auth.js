@@ -30,15 +30,15 @@ router.post(
       const body = req.body;
       const salt = await bcrypt.genSalt(10);
       const secPass = await bcrypt.hash(body.password, salt);
-      const newUser = await User.create({
+      const user = await User.create({
         name: body.name,
         email: body.email,
         password: secPass,
         date: body.date,
       });
       const data = {
-        newUser: {
-          id: newUser.id,
+        user: {
+          id: user.id,
         },
       };
       const authToken = jwt.sign(data, JWT_SECRET);
@@ -79,6 +79,8 @@ router.post(
         });
       }
       const passwordcompare = await bcrypt.compare(password, user.password);
+      console.log(user.password);
+      console.log(passwordcompare);
       if (!passwordcompare) {
         return res.status(400).json({
           success,
